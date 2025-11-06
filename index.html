@@ -42,54 +42,7 @@
         align-items: center;
       }
 
-      /* #controls {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 600px;
-        margin-bottom: 20px;
-      }
-
-      #controls label {
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      #controls input[type="text"],
-      #controls textarea {
-        width: calc(100% - 20px);
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 16px;
-      }
-
-      #controls button {
-        background-color: #c0392b;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
-      }
-
-      #controls button:hover {
-        background-color: #a02c21;
-      }
-
-      #controls input[type="file"] {
-        margin-bottom: 15px;
-      } */
-
+    
       /* --- Your Original Styles --- */
       #controls {
         background-color: #fff;
@@ -229,22 +182,7 @@
         user-select: none;
       }
 
-      /* #speaker-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.9;
-        filter: brightness(0.85) contrast(1.1);
-      } */
-      /* #speaker-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.9;
-        filter: brightness(0.85) contrast(1.1);
-        transition: all 0.3s ease; 
-        transform-origin: center center; 
-      } */
+  
       #speaker-bg {
         width: 100%;
         height: 100%;
@@ -273,15 +211,6 @@
         background-color: rgba(0, 0, 0, 0.4);
       }
 
-      /* Quote Frame */
-      /* #quote-frame {
-        border: 3px solid white;
-        padding: 20px 15px;
-        margin: 30px 0;
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.3);
-      } */
-
       .quote-mark {
         font-size: 150px;
         line-height: 0.5;
@@ -289,17 +218,6 @@
         position: absolute;
         z-index: 5;
       }
-      /* 
-      #top-quote {
-        top: -50px;
-        left: 5px;
-      }
-
-      #bottom-quote {
-        bottom: -50px;
-        right: 5px;
-        transform: scaleX(-1);
-      } */
 
       #quote-text {
         font-size: 28px;
@@ -364,167 +282,86 @@
       </div>
     </div>
 
-    <!-- <div id="controls">
-      <h2>Poster Generator Controls</h2>
+  <div id="controls">
+  <h2>Poster Generator Controls</h2>
 
-      <label for="quote-input">Text (Use **word** to highlight in red):</label>
-      <textarea
-        id="quote-input"
-        class="bangla-font"
-        rows="4"
-        placeholder="যেমন: “আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল”"
-      >
-আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল</textarea
-      >
+  <!-- Tabs -->
+  <div class="tab-buttons">
+    <button class="tab-btn active" data-tab="text-tab">Text, Font & Date</button>
+    <button class="tab-btn" data-tab="image-tab">Image</button>
+  </div>
 
-      <label for="date-input">Date:</label>
-      <input
-        type="text"
-        id="date-input"
-        class="bangla-font"
-        placeholder="January 15, 2024"
-      />
+  <!-- TAB 1: Text, Font & Date -->
+  <div id="text-tab" class="tab-content active">
+    <label for="quote-input">Text (Use **word** to highlight in red):</label>
+    <textarea
+      id="quote-input"
+      class="bangla-font"
+      rows="4"
+      placeholder="যেমন: “আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল”"
+    >আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল</textarea>
 
-      <label for="quote-font-size">Font Size:</label>
-      <div style="display: flex; align-items: center; gap: 10px">
-        <input
-          type="range"
-          id="quote-font-size"
-          min="12"
-          max="60"
-          value="28"
-          style="flex: 1"
-        />
-        <input
-          type="number"
-          id="quote-font-size-display"
-          min="12"
-          max="60"
-          value="28"
-          style="
-            width: 80px;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-          "
-        />
-        <span style="font-size: 14px">px</span>
-      </div>
+    <label for="date-input">Date:</label>
+    <input
+      type="text"
+      id="date-input"
+      class="bangla-font"
+      placeholder="January 15, 2024"
+    />
 
-      <label for="speaker-photo-upload">Upload Photo:</label>
-      <input type="file" id="speaker-photo-upload" accept="image/*" />
+    <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;" />
 
-      <label for="image-scale">Image Scale:</label>
+    <label for="quote-font-size">Font Size:</label>
+    <div style="display: flex; align-items: center; gap: 10px">
       <input
         type="range"
-        id="image-scale"
-        min="50"
-        max="200"
-        value="100"
-        style="width: 100%"
+        id="quote-font-size"
+        min="12"
+        max="60"
+        value="28"
+        style="flex: 1"
       />
-
-
-      <label for="image-brightness">Image Brightness:</label>
       <input
-        type="range"
-        id="image-brightness"
-        min="50"
-        max="150"
-        value="85"
-        style="width: 100%"
+        type="number"
+        id="quote-font-size-display"
+        min="12"
+        max="60"
+        value="28"
+        style="
+          width: 80px;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        "
       />
-
-      <label for="logo-upload">Upload Logo:</label>
-      <input type="file" id="logo-upload" accept="image/*" />
-
-      <button id="download-btn">Download Poster (PNG)</button>
-    </div> -->
-    <div id="controls">
-      <h2>Poster Generator Controls</h2>
-
-      <!-- Tabs -->
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="text-tab">Text & Date</button>
-        <button class="tab-btn" data-tab="image-tab">Image</button>
-        <button class="tab-btn" data-tab="font-tab">Font</button>
-      </div>
-
-      <!-- TAB 1: Text & Date -->
-      <div id="text-tab" class="tab-content active">
-        <label for="quote-input"
-          >Text (Use **word** to highlight in red):</label
-        >
-        <textarea
-          id="quote-input"
-          class="bangla-font"
-          rows="4"
-          placeholder="যেমন: “আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল”"
-        >
-আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল</textarea
-        >
-
-        <label for="date-input">Date:</label>
-        <input
-          type="text"
-          id="date-input"
-          class="bangla-font"
-          placeholder="January 15, 2024"
-        />
-      </div>
-
-      <!-- TAB 2: Image -->
-      <div id="image-tab" class="tab-content">
-        <label for="speaker-photo-upload">Upload Photo:</label>
-        <input type="file" id="speaker-photo-upload" accept="image/*" />
-
-        <label for="image-scale">Image Scale:</label>
-        <input type="range" id="image-scale" min="50" max="200" value="100" />
-
-        <label for="image-brightness">Image Brightness:</label>
-        <input
-          type="range"
-          id="image-brightness"
-          min="50"
-          max="150"
-          value="85"
-        />
-
-        <label for="logo-upload">Upload Logo:</label>
-        <input type="file" id="logo-upload" accept="image/*" />
-      </div>
-
-      <!-- TAB 3: Font -->
-      <div id="font-tab" class="tab-content">
-        <label for="quote-font-size">Font Size:</label>
-        <div style="display: flex; align-items: center; gap: 10px">
-          <input
-            type="range"
-            id="quote-font-size"
-            min="12"
-            max="60"
-            value="28"
-            style="flex: 1"
-          />
-          <input
-            type="number"
-            id="quote-font-size-display"
-            min="12"
-            max="60"
-            value="28"
-            style="
-              width: 80px;
-              padding: 8px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-            "
-          />
-          <span style="font-size: 14px">px</span>
-        </div>
-      </div>
-
-      <button id="download-btn">Download Poster (PNG)</button>
+      <span style="font-size: 14px">px</span>
     </div>
+  </div>
+
+  <!-- TAB 2: Image -->
+  <div id="image-tab" class="tab-content">
+    <label for="speaker-photo-upload">Upload or Paste Photo:</label>
+    <input type="file" id="speaker-photo-upload" accept="image/*" />
+    <div
+      id="paste-hint"
+      style="font-size: 14px; color: #777; margin-top: 5px"
+    >
+      💡 You can also paste an image here (Ctrl+V)
+    </div>
+
+    <label for="image-scale">Image Scale:</label>
+    <input type="range" id="image-scale" min="50" max="200" value="100" />
+
+    <label for="image-brightness">Image Brightness:</label>
+    <input type="range" id="image-brightness" min="50" max="150" value="85" />
+
+    <label for="logo-upload">Upload Logo:</label>
+    <input type="file" id="logo-upload" accept="image/*" />
+  </div>
+
+  <button id="download-btn">Download Poster (PNG)</button>
+</div>
+
 
     <script>
       document.querySelectorAll(".tab-btn").forEach((btn) => {
@@ -596,6 +433,44 @@
           imageBrightness.value = 85;
           updateImageStyle();
         }, 100);
+      });
+
+      // --- Enable Paste-to-Upload for Speaker Photo ---
+      window.addEventListener("paste", (event) => {
+        const items = event.clipboardData?.items;
+        if (!items) return;
+
+        for (const item of items) {
+          if (item.type.startsWith("image/")) {
+            const blob = item.getAsFile();
+            const file = new File([blob], "pasted-image.png", {
+              type: blob.type,
+            });
+
+            // Create a DataTransfer to simulate a file upload
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            speakerPhotoUpload.files = dataTransfer.files;
+
+            // Use your existing upload logic
+            handleImageUpload(speakerPhotoUpload, speakerBg);
+
+            // Reset controls after paste (same as file upload)
+            setTimeout(() => {
+              imageScale.value = 100;
+              imageBrightness.value = 85;
+              updateImageStyle();
+            }, 100);
+
+            // Optional: show small visual feedback
+            const pasteMsg = document.createElement("div");
+            pasteMsg.textContent = "✅ Image pasted successfully!";
+            pasteMsg.style =
+              "color:#27ae60;font-size:14px;margin-top:5px;font-weight:600;";
+            speakerPhotoUpload.insertAdjacentElement("afterend", pasteMsg);
+            setTimeout(() => pasteMsg.remove(), 2000);
+          }
+        }
       });
 
       // Get today's date in readable format
