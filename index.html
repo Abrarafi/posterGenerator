@@ -43,7 +43,6 @@
         align-items: center;
       }
 
-    
       /* --- Your Original Styles --- */
       #controls {
         background-color: #fff;
@@ -183,7 +182,6 @@
         user-select: none;
       }
 
-  
       #speaker-bg {
         width: 100%;
         height: 100%;
@@ -228,7 +226,7 @@
       }
 
       .highlight {
-        color: #ff4757; /* Bright Red highlight */
+        color: #faf203; /* Bright Red highlight */
         font-weight: 700;
       }
 
@@ -283,86 +281,97 @@
       </div>
     </div>
 
-  <div id="controls">
-  <h2>Poster Generator Controls</h2>
+    <div id="controls">
+      <h2>Poster Generator Controls</h2>
 
-  <!-- Tabs -->
-  <div class="tab-buttons">
-    <button class="tab-btn active" data-tab="text-tab">Text, Font & Date</button>
-    <button class="tab-btn" data-tab="image-tab">Image</button>
-  </div>
+      <!-- Tabs -->
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="text-tab">
+          Text, Font & Date
+        </button>
+        <button class="tab-btn" data-tab="image-tab">Image</button>
+      </div>
 
-  <!-- TAB 1: Text, Font & Date -->
-  <div id="text-tab" class="tab-content active">
-    <label for="quote-input">Text (Use **word** to highlight in red):</label>
-    <textarea
-      id="quote-input"
-      class="bangla-font"
-      rows="4"
-      placeholder="যেমন: “আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল”"
-    >আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল</textarea>
+      <!-- TAB 1: Text, Font & Date -->
+      <div id="text-tab" class="tab-content active">
+        <label for="quote-input"
+          >Text (Use **word** to highlight in red):</label
+        >
+        <textarea
+          id="quote-input"
+          class="bangla-font"
+          rows="4"
+          placeholder="যেমন: “আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল”"
+        >
+আমাদের হৃদয়ে **রক্তক্ষরণ** হচ্ছে; হায়েনারা এত গভীরভাবে আঘাত হানবে, এটা কল্পনারও বাইরে ছিল</textarea
+        >
 
-    <label for="date-input">Date:</label>
-    <input
-      type="text"
-      id="date-input"
-      class="bangla-font"
-      placeholder="January 15, 2024"
-    />
+        <label for="date-input">Date:</label>
+        <input
+          type="text"
+          id="date-input"
+          class="bangla-font"
+          placeholder="January 15, 2024"
+        />
 
-    <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;" />
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd" />
 
-    <label for="quote-font-size">Font Size:</label>
-    <div style="display: flex; align-items: center; gap: 10px">
-      <input
-        type="range"
-        id="quote-font-size"
-        min="12"
-        max="60"
-        value="28"
-        style="flex: 1"
-      />
-      <input
-        type="number"
-        id="quote-font-size-display"
-        min="12"
-        max="60"
-        value="28"
-        style="
-          width: 80px;
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        "
-      />
-      <span style="font-size: 14px">px</span>
+        <label for="quote-font-size">Font Size:</label>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <input
+            type="range"
+            id="quote-font-size"
+            min="12"
+            max="60"
+            value="28"
+            style="flex: 1"
+          />
+          <input
+            type="number"
+            id="quote-font-size-display"
+            min="12"
+            max="60"
+            value="28"
+            style="
+              width: 80px;
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+          <span style="font-size: 14px">px</span>
+        </div>
+      </div>
+
+      <!-- TAB 2: Image -->
+      <div id="image-tab" class="tab-content">
+        <label for="speaker-photo-upload">Upload or Paste Photo:</label>
+        <input type="file" id="speaker-photo-upload" accept="image/*" />
+        <div
+          id="paste-hint"
+          style="font-size: 14px; color: #777; margin-top: 5px"
+        >
+          💡 You can also paste an image here (Ctrl+V)
+        </div>
+
+        <label for="image-scale">Image Scale:</label>
+        <input type="range" id="image-scale" min="50" max="200" value="100" />
+
+        <label for="image-brightness">Image Brightness:</label>
+        <input
+          type="range"
+          id="image-brightness"
+          min="50"
+          max="150"
+          value="85"
+        />
+
+        <label for="logo-upload">Upload Logo:</label>
+        <input type="file" id="logo-upload" accept="image/*" />
+      </div>
+
+      <button id="download-btn">Download Poster (PNG)</button>
     </div>
-  </div>
-
-  <!-- TAB 2: Image -->
-  <div id="image-tab" class="tab-content">
-    <label for="speaker-photo-upload">Upload or Paste Photo:</label>
-    <input type="file" id="speaker-photo-upload" accept="image/*" />
-    <div
-      id="paste-hint"
-      style="font-size: 14px; color: #777; margin-top: 5px"
-    >
-      💡 You can also paste an image here (Ctrl+V)
-    </div>
-
-    <label for="image-scale">Image Scale:</label>
-    <input type="range" id="image-scale" min="50" max="200" value="100" />
-
-    <label for="image-brightness">Image Brightness:</label>
-    <input type="range" id="image-brightness" min="50" max="150" value="85" />
-
-    <label for="logo-upload">Upload Logo:</label>
-    <input type="file" id="logo-upload" accept="image/*" />
-  </div>
-
-  <button id="download-btn">Download Poster (PNG)</button>
-</div>
-
 
     <script>
       document.querySelectorAll(".tab-btn").forEach((btn) => {
